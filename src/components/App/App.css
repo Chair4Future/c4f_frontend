@@ -1,0 +1,124 @@
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* __________________________NAVBAR__________________________ */
+/* __________________________NAVBAR END__________________________ */
+    
+#cover{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(0deg, #3464d9 30%, var(--secondary-color) 100%);
+}
+
+.cover-container{
+    height: 100%;
+    padding: 0 15%;
+    display: flex;
+}
+
+    .cover-content{
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+        .cover-image{
+            height: 100%;
+            width: 100%;
+            background-image: url("../../images/logo-xl.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .cover-text{
+            display: block;
+            min-height: 20%;
+            color: #fff;
+            padding-left: 5%;
+        }
+            .cover-slogan{
+                font-size: 2.3rem;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .cover-description{
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+
+    .cover-annoucements{
+        margin: 5% 0 5% 5%;
+        min-width: 25%; 
+        background-color: rgba(255,255,255, 0.1) 
+    }
+        .annoucements-title{
+
+        }
+        .annoucements-wrapper{
+
+        }
+            .annoucement{
+
+            }
+
+                .annoucement-content{
+
+                }
+        
+
+
+    
+#description{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondary-color);
+}
+
+
+#footer{
+    width: 100%;
+    background-color: #252422;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 10%;
+}
+    .footer-column{
+        flex: 1;
+        color: #fff;
+        font-family: 'Nunito', sans-serif;
+        padding: 30px 20px;
+    }
+
+    .footer-column-title{
+        font-weight: 700;
+    }
+
+    .footer-column-text{
+
+    }
+    /* .footer-hr{
+        border-bottom: 1px solid #eee;
+        padding: 0 10%;
+    } */
+
+.footer-base{
+    text-align: center;
+    padding: 20px;
+
+}

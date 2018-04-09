@@ -1,0 +1,16 @@
+:root{
+  --primary-color: #0098dc;
+  --secondary-color: #00b09b;
+  --yellow-original: #fad000;
+  --green-original: #96c11f;
+  --orange-original: #fd7e2d;
+  --purple-original: #a70064;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  /* background-color: var(--primary-color); */
+}
