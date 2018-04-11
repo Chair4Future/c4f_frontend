@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Cover from "../Cover/Cover";
 import ContactUs from "../ContactUs/ContactUs";
 import News from "../News/News";
+import Description from "../Description/Description";
 import {
   smoothInternalAnchorNavigation
 } from "../../utils/smooth-scrolling";
@@ -19,7 +20,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Cover />
-        <section id="description" />
+        <Description />
         <News />
         <ContactUs />
         <footer id="footer">
