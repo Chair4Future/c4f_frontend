@@ -33,6 +33,15 @@
             min-height: 20%;
             color: #fff;
             padding-left: 5%;
+            font-family: var(--font-main), sans-serif;
+            /* font-family: 'Gudea', sans-serif;    */
+            /* font-family: 'Dosis', sans-serif; */
+            
+            /* font-family: 'Fjalla One', sans-serif; */
+            /* font-family: 'Cuprum', sans-serif; */
+            /* font-family: 'PT Sans Narrow', sans-serif; */
+            /* font-family: 'Yanone Kaffeesatz', sans-serif; */
+            
         }
             .cover-slogan{
                 font-size: 2.3rem;
@@ -111,7 +120,7 @@
             }
 
             .annoucement-title > div{
-                font-family: 'Contrail One', cursive;
+                font-family: var(--font-wild), cursive;
                 /* font-family: 'Share', cursive; */
                 font-size: 1.6rem;
                 color: inherit;
@@ -124,7 +133,7 @@
             flex: 1;
             font-size: 1.3rem;
             align-items: stretch;
-            font-family: 'Archivo Narrow', sans-serif;
+            font-family: var(--font-extra), sans-serif;
             color: #000;
                /* font-family: 'Nunito', sans-serif; */
             /* font-family: 'Arimo', sans-serif; */

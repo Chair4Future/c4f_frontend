@@ -2,14 +2,13 @@
 #contacts{
     position: relative;
     width: 100%;
-    height: 400px;
 }
 
 .contacts-background{
     position: relative;
     height: 100%;
     width: 100%;
-    /*background-image: url("../../images/contact_us.jpg");*/
+    background-image: url("../../images/contact_us.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,69 +17,57 @@
 .contacts-background:after {
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /*background-color: rgba(0, 0, 0, 0.7);*/
+    background-color: rgba(0, 0, 0, 0.7);
     content: "";
 }
 
 .contacts-wrapper{
-    position: relative;
-    z-index: -1;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding: 2% 10%;
+    font-family: var(--font-extra), sans-serif;
 }
-    .contacts-content{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .contacts-form{
-        padding: 20px 40px;
-        border-radius: 10px;
-        width:1000px;
-        background-color: rgba(255, 255, 255, 0.7);
-        font-family: 'Nunito', sans-serif;
-    }
-
-        .contacts-form-title{
-            font-weight: bold;
-            text-align: center;
-            font-size: 30px;
-            color: var(--secondary-color)
-        }
-
-        .contacts-form-info{
+        .contacts-container{
             display: flex;
-            margin-top:38px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5% 0;
         }
 
-            .contacts-form-map{
-                height:400px;
-                width: 600px;
+            .contacts-map{
+                flex: 2;
+                height:500px;
             }
 
-            .contacts-form-information {
-                padding-left: 48px;
-                width:400px;
+            .contacts-information {
+                flex: 1;
+                padding: 5%;
             }
 
-            .contacts-form-information-fields{
-                color:#222222;
+            .contacts-information-fields{
+                color: rgb(233, 233, 233);
                 padding:12px;
+                font-size: 1.7rem;
             }
-            .contacts-form-information-inputs{
+            .contacts-information-inputs{
                 margin-left:2px;
                 margin-top:12px;
                 color:#222222;
             }
 
-            .contacts-form-information-inputs-information{
+            .contacts-information-inputs-information{
                 margin-top:5px;
                 text-align: center;
             }

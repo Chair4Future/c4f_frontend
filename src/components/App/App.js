@@ -28,7 +28,7 @@ class App extends Component {
             <div className="footer-content">
               <div className="footer-column">
                 <div className="footer-column-title">
-                  At vero eos et accusamus et iusto odio dignissimos
+                  About Us
                 </div>
                 <div className="footer-column-text">
                   ducimus qui blanditiis praesentium voluptatum deleniti atque
@@ -40,7 +40,7 @@ class App extends Component {
               </div>
               <div className="footer-column">
                 <div className="footer-column-title">
-                  At vero eos et accusamus et iusto odio dignissimos
+                  Partners
                 </div>
                 <div className="footer-column-text">
                   ducimus qui blanditiis praesentium voluptatum deleniti atque
@@ -52,7 +52,7 @@ class App extends Component {
               </div>
               <div className="footer-column">
                 <div className="footer-column-title">
-                  At vero eos et accusamus et iusto odio dignissimos
+                  Social 
                 </div>
                 <div className="footer-column-text">
                   ducimus qui blanditiis praesentium voluptatum deleniti atque
@@ -64,7 +64,7 @@ class App extends Component {
               </div>
             </div>
             {/* <hr className="footer-hr"/> */}
-            <div className="footer-base">ducimus qui blanditiis pra</div>
+            <div className="footer-base">© 2018 Chair4Future. All Rights Reserved.</div>
           </div>
         </footer>
       </div>

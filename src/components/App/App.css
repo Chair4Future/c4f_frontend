@@ -24,6 +24,7 @@ a {
 }
 
 .footer-content{
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -32,16 +33,18 @@ a {
     .footer-column{
         flex: 1;
         color: #fff;
-        font-family: 'Nunito', sans-serif;
+        font-family: var(--font-main), sans-serif;
         padding: 30px 20px;
     }
 
     .footer-column-title{
         font-weight: 700;
+        padding-bottom:  2%;
+        font-size: 1.4rem;
     }
 
     .footer-column-text{
-
+        font-size: 1.1rem;        
     }
     /* .footer-hr{
         border-bottom: 1px solid #eee;
@@ -50,6 +53,8 @@ a {
 
 .footer-base{
     text-align: center;
-    padding: 20px;
-
+    padding: 1.4rem 5%;
+    color: var(--secondary-color);
+    font-family: var(--font-extra), sans-serif;
+    font-size: 1.4rem;
 }

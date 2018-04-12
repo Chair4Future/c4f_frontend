@@ -18,32 +18,31 @@ class ContactUs extends Component {
       <section id="contacts">
         <div className="contacts-background">
           <div className="contacts-wrapper">
-            <div className="contacts-form">
-              <div className="contacts-form-title">Contact Us</div>
-              <div className="contacts-form-info">
-                <div className="contacts-form-map">
+              <div className="title-h1">Contact Us</div>
+              <div className="contacts-container">
+                <div className="contacts-map">
                   <MyMapComponent
                     isMarkerShown
                     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF2mT0wy3zICKhNKgJdKbOQz5BRvMrfbY&callback=initMap"
                     loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `250px` }} />}
+                    containerElement={<div style={{ height: `100%` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                   />
                 </div>
-                <div className="contacts-form-information">
-                  <div className="contacts-form-information-fields">
+                <div className="contacts-information">
+                  <div className="contacts-information-fields">
                   <FontAwesome name='map-pin' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px" }} />
                    <label> Quinta do Contador-Estrada da Serra</label><br /><label style={{marginLeft:"8%"}}>2300-313 Tomar - Portugal</label>
                   </div>
-                  <div className="contacts-form-information-fields">
+                  <div className="contacts-information-fields">
                   <FontAwesome name='phone' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px" }} />
                     Telefone: +351 249 328 100
                   </div>
-                  <div className="contacts-form-information-fields">
+                  <div className="contacts-information-fields">
                   <FontAwesome name='print' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px"  }} />
                     Fax: +351 249 328 186
                   </div>
-                  <div className="contacts-form-information-fields">
+                  <div className="contacts-information-fields">
                   <FontAwesome name='at' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px"  }} />
                     Email: <a><u>blalvalsd</u></a>
                   </div>
@@ -61,7 +60,6 @@ class ContactUs extends Component {
     </div>*/}
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </section>

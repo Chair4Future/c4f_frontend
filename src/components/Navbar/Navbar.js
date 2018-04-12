@@ -37,7 +37,7 @@ class Navbar extends React.Component {
             <div className={show? "header-wrapper active": "header-wrapper"}>
               {show && <div className="header-logo" />}
               <div className="header-content">
-                <a className="header-nav" href="#description">Project</a>
+                <a className="header-nav" href="#description">Projeto</a>
                 <a className="header-nav" href="#news">Noticías</a>
                 <a className="header-nav" href="#roadmap">Roadmap</a>
                 <a className="header-nav" href="#contacts">Contactos</a>

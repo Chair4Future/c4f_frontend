@@ -5,12 +5,22 @@
   --green-original: #96c11f;
   --orange-original: #fd7e2d;
   --purple-original: #a70064;
+  --font-main: "Open Sans Condensed";
+  --font-extra: "Archivo Narrow";
+  --font-wild: "Contrail One";
 }
 
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  /* background-color: var(--primary-color); */
+  font-family: var(--font-main);
+}
+
+.title-h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    font-family: var(--font-main), sans-serif;
+    color: var(--secondary-color);
+    padding:0 10%;
 }
