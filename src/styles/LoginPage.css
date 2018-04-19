@@ -1,0 +1,84 @@
+.c4f-login-page{
+    background: white;
+}
+
+.c4f-container{
+    display: flex;
+    flex-direction: column;
+}
+
+    .c4f-content{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding-right: 10%;
+        min-height:100vh;
+    }
+
+        .c4f-column{
+            width:50%;
+            color: #000;
+            font-family: var(--font-main), sans-serif;
+            padding:3%;
+        }
+
+            .c4f-logo-image{  
+                position: relative;   
+                height: 100%;
+                width: 100%;
+                background-position-y: 225px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('../images/background5.png')
+            }
+
+            .c4f-column-content{
+                margin-top:15%;
+                margin-left:10%;
+            }
+
+            .c4f-column-title{   
+                font-weight: 700;
+                padding-bottom:  2%;
+                font-size: 3rem;    
+                color: var(--secondary-color);   
+                text-align: center;        
+            }
+
+            .c4f-column-content-text{
+                padding:10px 0px 0px;
+                color:#403C37;
+                font-weight: 700;
+                font-size: 2rem;
+            }
+
+        .c4f-column-content-input{
+                width:100%;
+                border-radius: 4px;
+                padding: 6px;
+                border:1px solid #403C37;
+                font:100 13.3333px Arial;
+            }
+
+            .c4f-column-content-input:focus{
+                outline: none;
+            }
+
+            .c4f-column-content-button{
+                margin-top:20px;
+                background-color: #00b09b;
+                padding:8px 16px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                font:100 20px Arial;
+                color:white;
+                border: 1px solid #00b09b;
+                border-radius:3px;
+                width:200px;
+            }
+
+            .c4f-column-content-button:hover{
+                background-color: #009688;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+            }

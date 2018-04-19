@@ -7,6 +7,7 @@ import DefaultLayout from './../layouts/DefaultLayout';
 //Pages
 import AppPage from './../components/App/App';
 import LoginPage from './../pages/LoginPage';
+import ProfilePage from './../pages/ProfilePage';
 
 
 export default class Routes extends React.Component {
@@ -15,6 +16,7 @@ export default class Routes extends React.Component {
             <Switch>
                 <Route exact path="/" component={AppPage} />
                 <DefaultLayout path="/login" component={LoginPage} />
+                <DefaultLayout path="/profile" component={ProfilePage} />
             </Switch>           
         );
     }

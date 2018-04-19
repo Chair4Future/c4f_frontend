@@ -39,7 +39,7 @@ class ContactUs extends Component {
                     Telefone: +351 249 328 100
                   </div>
                   <div className="contacts-information-fields">
-                  <FontAwesome name='print' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px"  }} />
+                  <FontAwesome name='print' style={{ backgroundColor:"#fff", fontSize:"20px", marginRight:12+"px"  }} />
                     Fax: +351 249 328 186
                   </div>
                   <div className="contacts-information-fields">
