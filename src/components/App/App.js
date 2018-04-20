@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Navbar from "../Navbar/Navbar";
-import Cover from "../Cover/Cover";
-import ContactUs from "../ContactUs/ContactUs";
-import News from "../News/News";
-import Description from "../Description/Description";
+import Navbar from "../App/Navbar/Navbar";
+import Cover from "../App/Cover/Cover";
+import ContactUs from "../App/ContactUs/ContactUs";
+import News from "../App/News/News";
+import Description from "../App/Description/Description";
 import {
   smoothInternalAnchorNavigation
 } from "../../utils/smooth-scrolling";

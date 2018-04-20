@@ -5,10 +5,9 @@ import axios from "axios";
  */
 const configs = {
     baseURL: "http://localhost:3000/",
-    withCredentials: true
 };
 
-const axios = axios.create(configs);
+const instance = axios.create(configs);
 
 axios.interceptors.response.use(
     successResponse => successResponse,
@@ -23,4 +22,4 @@ axios.interceptors.response.use(
     }
 );
 
-export default axios;
+export default instance;

@@ -1,0 +1,52 @@
+.header{
+    width: 100%;
+    height: 70px;
+    /* position: relative; */
+    /* font-family:  */
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+}
+.header-wrapper{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    background-color: transparent;
+}
+
+.header-wrapper.active{
+    background-color: #fff;
+} 
+    .header-logo{
+        align-self: center;
+        height: 70px;
+        width: 160px;
+        padding-left: 5%;
+        background-image: url("../../../images/logo-xl.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+
+    .header-content{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-nav{
+        font-size: 2rem;
+        color: #000;
+        font-weight: 700;  
+        text-transform: uppercase;
+        font-family: var(--font-main), sans-serif;
+        padding: 0 25px;
+    }
+
+    .header-nav:hover {
+        color: var(--primary-color);
+        transition: color ease .3s;
+    }

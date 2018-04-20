@@ -37,6 +37,8 @@ export default class LoginPage extends React.Component {
             password: this.state.password == this.state.confirmPassword ? this.state.password : console.log('error'),
             country: this.state.country
         }
+
+        console.log(toSend)
     }
 
     render() {

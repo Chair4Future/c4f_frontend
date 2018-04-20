@@ -1,52 +1,127 @@
-.header{
+.c4f-navbar{
     width: 100%;
-    height: 70px;
+    height: 75px;
     /* position: relative; */
     /* font-family:  */
     position: fixed;
     top: 0;
     z-index: 10;
-
-}
-.header-wrapper{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    background-color: transparent;
+    background-color: #00b09b;
 }
 
-.header-wrapper.active{
-    background-color: #fff;
-} 
-    .header-logo{
-        align-self: center;
-        height: 70px;
-        width: 160px;
-        padding-left: 5%;
-        background-image: url("../../images/logo-xl.png");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-    }
-
-    .header-content{
-        flex: 1;
+    .c4f-navbar-wrapper{
+        width: 80%;
+        margin-left:10%;
+        height: 75px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        background-color: transparent;
     }
 
-    .header-nav{
-        font-size: 2rem;
-        color: #000;
-        font-weight: 700;  
-        text-transform: uppercase;
-        font-family: var(--font-main), sans-serif;
-        padding: 0 25px;
-    }
+        .c4f-navbar-logo{
+            align-self: center;
+            height: 70px;
+            width: 160px;
+            padding-left: 5%;
+            background-image: url("../../images/logo-chair4future-5.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
 
-    .header-nav:hover {
-        color: var(--primary-color);
-        transition: color ease .3s;
-    }
+        .c4f-navbar-search{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;           
+            padding-left: 3%;
+        }
+            #search-icon{
+                color:white;
+                margin-top: 5px;
+            }
+            .c4f-navbar-search-input{
+                border: none;
+                background-color: transparent;
+                padding:8px;
+                border-bottom: 1px solid thistle;
+                color:white;
+                width: 30%;
+                transition: width 0.5s;
+                font:100 13.3333px Arial;
+            }
+
+            .c4f-navbar-search-input::placeholder{
+                color:white;
+                font: 400 13.3333px Arial;
+            }
+
+            .c4f-navbar-search-input:focus{
+                outline: none;
+                transition: width 0.5s;
+                border-bottom: 2px solid white;
+                width:35%
+            }
+
+            .c4f-navbar-search-input:focus::placeholder{
+                color:transparent;
+            }
+
+        .c4f-navbar-content{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .c4f-navbar-content-password{
+            color:white;
+        }
+
+        .c4f-navbar-content-password:hover{
+            color:white;
+        }
+
+        .c4f-grid-navbar{
+            width: 70%;
+            padding-left: 20%;
+        }
+
+        .c4f-navbar-content-input{
+            padding: 4px;
+            width:100%;
+            font:100 13.3333px Arial;
+        }
+
+        .c4f-navbar-content-input::placeholder, .c4f-navbar-content-password{
+            font:100 13.3333px Arial;
+        }
+
+        .c4f-navbar-content-login-button{
+            background-color:transparent;
+            padding:8px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font:100 13.3333px Arial;
+            color:white;
+            border-radius:3px;
+            border:1px solid white;
+            width:125px;
+        }
+
+        .c4f-grid-navbar-button{
+            background-color: #00b09b;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font:100 14px Arial;
+            color:white;
+            border: 1px solid #00b09b;
+            border-radius:50%;
+            
+        }
+
+        .c4f-grid-navbar-button:hover{
+            background-color: #009688;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+        }
+

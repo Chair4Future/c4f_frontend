@@ -145,7 +145,7 @@
 
             .news-main-image{
                 width: 45%;
-                background-image: url("./../../images/forum.png");
+                background-image: url("./../../../images/forum.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
