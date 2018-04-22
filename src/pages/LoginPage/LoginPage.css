@@ -13,7 +13,6 @@
         flex-direction: row;
         flex-wrap: nowrap;
         padding-right: 10%;
-        min-height:100vh;
     }
 
         .c4f-column{
@@ -30,12 +29,18 @@
                 background-position-y: 225px;
                 background-size: contain;
                 background-repeat: no-repeat;
-                background-image: url('../images/background5.png')
+                background-image: url('./../../images/background5.png')
             }
 
             .c4f-column-content{
-                margin-top:15%;
+                margin-top:5%;
                 margin-left:10%;
+            }
+
+            .c4f-login-form{
+                padding: 5%;
+                border: 1px solid #000;
+                border-radius: 40px;
             }
 
             .c4f-column-title{   

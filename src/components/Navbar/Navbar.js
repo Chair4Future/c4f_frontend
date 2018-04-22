@@ -1,16 +1,20 @@
 import React from 'react';
-import './Navbar.css';
 import FontAwesome from 'react-fontawesome'
 import { Grid, Row, Col } from 'react-bootstrap';
-import axios from '../../configs/axios'
+import { observer } from 'mobx-react';
+import axios from '../../configs/axios';
+import history from '../../configs/history';
+import User from '../../lib/user';
 
+import './Navbar.css';
+
+@observer(['user'])
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: undefined,
-            password: undefined,
-            loggedIn: true
+            email: null,
+            password: null
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -19,10 +23,11 @@ export default class Navbar extends React.Component {
 
     handleLogin() {
         axios.post('login', this.state)
-            .then(function (response) {
+            .then((response) => {
+                console.log(response)
                 if(response === 200){
-                    console.log(response.status)
-                    window.history.assign('/profile')
+                    
+                    history.replace("/profile");
                 }
             })
             .catch(function (error) {
@@ -35,12 +40,12 @@ export default class Navbar extends React.Component {
         const value = target.value;
         const name = target.name;
 
-
         this.setState({ [name]: value });
     }
 
 
     render() {
+        console.log(this.props.user)
         return (<nav className="c4f-navbar">
             <div className="c4f-navbar-wrapper">
                 <div className="c4f-navbar-logo"></div>

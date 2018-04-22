@@ -1,13 +1,17 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap'
-import '../styles/LoginPage.css';
 import FontAwesome from 'react-fontawesome'
+
+import CountryList from 'country-list';
+
+import './LoginPage.css';
+
 
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            countryList: require('country-list')().getNameList(),
+            countryList: CountryList().getNameList(),
             firstName:undefined,
             secondName:undefined,
             email:undefined,
@@ -47,7 +51,7 @@ export default class LoginPage extends React.Component {
                 <div className="c4f-container">
                     <div className="c4f-content">
                         <div className="c4f-column">
-                            <div className="c4f-column-content">
+                            <div className="c4f-login-form">
                                 <Grid fluid>
                                     <Row className="show-grid">
                                         <div className="c4f-column-title">Cria a tua conta</div>

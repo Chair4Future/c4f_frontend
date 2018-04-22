@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "country-list": "^1.1.0",
+    "history": "^4.7.2",
     "jquery": "^3.3.1",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
