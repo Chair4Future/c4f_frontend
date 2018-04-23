@@ -1,6 +1,5 @@
 import React from 'react';
-import {Switch, Route} from "react-router-dom";
-
+import {Switch} from "react-router-dom";
 //Layouts
 import DefaultLayout from './../layouts/DefaultLayout';
 
@@ -15,9 +14,9 @@ export default class Routes extends React.Component {
         return (
             <Switch>
                 {/* <Route exact path="/" component={AppPage} /> */}
-                <DefaultLayout path="/" component={LoginPage} />
-                <DefaultLayout path="/profile" component={ProfilePage} />
-            </Switch>           
+                <DefaultLayout exact path="/" component={LoginPage} />
+                <DefaultLayout exact path="/profile" component={ProfilePage} />
+            </Switch>
         );
     }
 

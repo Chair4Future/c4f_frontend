@@ -1,17 +1,19 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap'
-import FontAwesome from 'react-fontawesome'
+import axios from '../../configs/axios';
+import {Link} from 'react-router-dom'
 
-import CountryList from 'country-list';
+import Countries from 'country-list';
 
 import './LoginPage.css';
 
+const CountryList = Countries().getNameList();
 
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            countryList: CountryList().getNameList(),
             firstName:undefined,
             secondName:undefined,
             email:undefined,
@@ -22,28 +24,43 @@ export default class LoginPage extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.registerUser = this.registerUser.bind(this);
     }
 
+    
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
 
-
         this.setState({[name]: value});
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
+        console.log(this.props)
         event.preventDefault();
-        var toSend= {
-            name:this.state.firstName + ' ' + this.state.secondName,
-            email:this.state.email,
-            password: this.state.password == this.state.confirmPassword ? this.state.password : console.log('error'),
-            country: this.state.country
+        var data= {
+            name: this.state.firstName + ' ' + this.state.secondName,
+            email: this.state.email,
+            password: this.state.password,
+            country_code: this.state.country
         }
-
-        console.log(toSend)
+        console.log(data)
+        await this.registerUser(data);
     }
+
+    async registerUser(data){
+        try {
+            const response = await axios.post('/register', data);
+            console.log(response);
+            if(response === 200){
+
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    } 
+
 
     render() {
         return (
@@ -87,10 +104,9 @@ export default class LoginPage extends React.Component {
                                         <Col lg={12}>
                                             <div className="c4f-column-content-text">Country</div>
                                             <select onChange={(e) =>this.setState({country:(e.target.options[e.target.selectedIndex].value)})}>
-                                                {Object.keys(this.state.countryList).map(key => {
-                                                    return <option  key={this.state.countryList[key]} value={this.state.countryList[key]}>{key.charAt(0).toUpperCase() + key.slice(1)}</option>
-                                                })
-                                                }
+                                                {Object.keys(CountryList).map(key => {
+                                                    return <option  key={CountryList[key]} value={CountryList[key]}>{key.charAt(0).toUpperCase() + key.slice(1)}</option> 
+                                                })}
                                             </select>
                                         </Col>
                                     </Row>

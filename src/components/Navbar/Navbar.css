@@ -2,30 +2,144 @@
     width: 100%;
     height: 75px;
     position: relative;
-    /* font-family:  */
-    z-index: 10;
-    background-color: #00b09b;
+    z-index: 100;
+    background-color: var(--bg-primary);
 }
-
     .c4f-navbar-wrapper{
-        width: 80%;
-        margin-left:10%;
-        height: 75px;
+        margin-left: 2%;
+        height: 100%;
         display: flex;
-        background-color: transparent;
     }
 
         .c4f-navbar-logo{
             align-self: center;
             height: 70px;
             width: 160px;
-            padding-left: 5%;
             background-image: url("../../images/logo-chair4future-5.png");
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            position: absolute;
         }
+
+              
+        .c4f-navbar-content{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*NAVBAR FORM*/
+        .no-auth-content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        .c4f-navbar-form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            flex: 1;
+        }
+
+        .c4f-navbar-inputs{
+            display: flex;
+            flex-direction: row;
+        }
+        .c4f-nav-item{
+            margin: 0 10px;
+        }
+        .no-password{
+            color: var(--color-white);
+            display: inline-block;
+        }
+
+        /*END OF NAVBAR FORM*/
+
+        /*NAVBAR AUTH CONTENT*/
+        .auth-content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+            .searchbar{
+                justify-self: flex-start;
+                font-family: 'Nunito Sans', sans-serif;
+                color: var(--color-white);
+                border-radius: 3px;
+                padding-left: 12px;
+                border: none;
+                background-color: #59c1b8;
+                margin-left: 12%;
+            }
+
+            .searchbar:focus{
+                outline: none;
+                box-shadow: 0 1px 8px 0 #29b8ac;
+            }
+
+            .c4f-input-searchbar {
+                background-color: transparent;
+                border: none;
+                padding: 13px 20px;
+                height: 100%; 
+            }
+
+            .c4f-input-searchbar:focus {
+                outline: none;
+            }
+
+            .c4f-navigation{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .c4f-navigation-link{
+                margin: 0 10px;
+                padding: 7px 3px;
+                color: var(--color-white);
+                font-family: 'Nunito Sans', sans-serif;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                transition: color 100ms ease-in;
+            }
+
+            .c4f-navigation-link:hover{
+                color: #18218c;
+                cursor: pointer;
+            }
+
+            .c4f-navigation-link.active{
+                color: #18218c;
+                font-weight: 700;
+            }
+
+
+            .c4f-icons{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                flex-basis: 15%;
+            }
+
+            .c4f-nav-icon{
+                margin: 14px;
+            }
+        /*END OF NAVBAR AUTH CONTENT*/
+
+
+
 
         .c4f-navbar-search{
             flex: 1;
@@ -61,25 +175,8 @@
                 width:35%
             }
 
-            .c4f-navbar-search-input:focus::placeholder{
-                color:transparent;
-            }
-
-        .c4f-navbar-content{
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .c4f-navbar-content-password{
-            color:white;
-        }
-
-        .c4f-navbar-content-password:hover{
-            color:white;
-        }
-
+    
+      
         .c4f-grid-navbar{
             width: 70%;
             padding-left: 20%;
@@ -91,10 +188,7 @@
             font:100 13.3333px Arial;
         }
 
-        .c4f-navbar-content-input::placeholder, .c4f-navbar-content-password{
-            font:100 13.3333px Arial;
-        }
-
+  
         .c4f-navbar-content-login-button{
             background-color:transparent;
             padding:8px;

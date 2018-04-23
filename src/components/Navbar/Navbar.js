@@ -1,97 +1,106 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome'
-import { Grid, Row, Col } from 'react-bootstrap';
-import { observer } from 'mobx-react';
-import axios from '../../configs/axios';
-import history from '../../configs/history';
-import User from '../../lib/user';
+import { Link } from 'react-router-dom';
+import { inject } from 'mobx-react';
+
+import history from './../../configs/history';
 
 import './Navbar.css';
 
-@observer(['user'])
+@inject("user")
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            email: null,
-            password: null
-        }
+
+        this.email = React.createRef();
+        this.password = React.createRef();
 
         this.handleLogin = this.handleLogin.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
+        // this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleLogin() {
-        axios.post('login', this.state)
-            .then((response) => {
-                console.log(response)
-                if(response === 200){
-                    
-                    history.replace("/profile");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+     async handleLogin() {
+        const email = this.email.value;
+        const password = this.password.value;
+
+        let result = await this.props.user.AutenticateUser({ email: email, password: password })
+        console.log(result)
+        if (result)
+            history.push('/profile');
+        // display error
     }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({ [name]: value });
+    static getDerivedStateFromProps(nextProps, prevState){
+        console.log(nextProps)
     }
 
+    // handleInputChange(event) {
+    //     const target = event.target;
+    //     const value = target.value;
+    //     const name = target.name;
+
+    //     this.setState({ [name]: value });
+    // }
 
     render() {
-        console.log(this.props.user)
-        return (<nav className="c4f-navbar">
-            <div className="c4f-navbar-wrapper">
-                <div className="c4f-navbar-logo"></div>
-                {this.state.loggedIn && <div className="c4f-navbar-search">
-                    <FontAwesome id="search-icon" name='search' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", marginRight: 12 + "px" }} />
-                    <input className="c4f-navbar-search-input" placeholder="Search..." /></div>
-                }
-                <div className="c4f-navbar-content">
-                    {!this.state.loggedIn && <Grid className="c4f-grid-navbar">
-                        <Row className="show-grid">
-                            <Col lg={5}>
-                                <input type="email" name="email" onChange={this.handleInputChange} className="c4f-navbar-content-input" placeholder="Email" />
-                            </Col>
-                            <Col lg={5}>
-                                <input type="password" name="password" onChange={this.handleInputChange} className="c4f-navbar-content-input" placeholder="Password" />
-                            </Col>
-                            <Col lg={2}>
-                                <button onClick={this.handleLogin} className="c4f-navbar-content-login-button">Iniciar Sessão</button>
-                            </Col>
-                        </Row>
-                        <Row className="show-grid">
-                            <Col lg={5}></Col>
-                            <Col lg={5}><a className="c4f-navbar-content-password">Esqueceu-se da password?</a></Col>
-                        </Row>
-                    </Grid>
-                    }
-                    {this.state.loggedIn && <Grid className="c4f-grid-navbar">
-                        <Row className="show-grid">
-                            <Col lg={4}>
-                                <button className="c4f-grid-navbar-button">
-                                    <FontAwesome name='envelope' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", padding: "8px" }} />
-                                </button>
-                            </Col>
-                            <Col lg={4}>
-                                <button className="c4f-grid-navbar-button" onClick={() => window.location.assign("/profile")}><FontAwesome name='user' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", padding: "8px" }} />
-                                </button>
-                            </Col>
-                            <Col lg={4}>
-                                <button className="c4f-grid-navbar-button">
-                                    <FontAwesome name='sign-out-alt' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", padding: "8px" }} />
-                                </button>
-                            </Col>
-                        </Row>
-                    </Grid>}
+        return (
+            <nav className="c4f-navbar">
+                <div className="c4f-navbar-wrapper">
+                    <div className="c4f-navbar-logo" />
+                    <div className="c4f-navbar-content">
+                        {/* {<AuthNavbar user={this.props.user.user}/>  } */}
+                        { this.props.user.user? <AuthNavbar user={this.props.user.user}/> : <NavbarForm login={this.handleLogin} email={el => this.email = el} password={el => this.password = el }/> }
+                    </div>
                 </div>
-            </div>
-        </nav>)
+            </nav>
+        )
     }
 }
+
+const NavbarForm = (props) => {
+    return (
+        <div className="no-auth-content">
+            <div className="c4f-navbar-form">
+                <div className="c4f-navbar-inputs">
+                    <input type="email" name="email" ref={props.email} className="c4f-input input-main c4f-nav-item" placeholder="Email" />
+                    <input type="password" name="password" ref={props.password} className="c4f-input input-main c4f-nav-item" placeholder="Password" />
+                </div>
+                <div className="c4f-nav-item">
+                <a className="no-password">Esqueces-te da password?</a>
+                </div>
+                
+            </div>
+            <div className="c4f-nav-item">
+                <button onClick={async () => await props.login()} className="c4f-button-full">Iniciar Sessão</button>
+            </div>
+        </div>
+    );
+};
+
+const AuthNavbar = (props) => {
+    return (
+        <div className="auth-content">
+            <div className="searchbar c4f-input-group">
+                <FontAwesome className="c4f-icon" name='search' />
+                <input type="text" className="c4f-input-searchbar" placeholder="Search" />
+            </div>
+            <div className="c4f-navigation">
+                <div className="c4f-navigation-link">Feed</div>
+                <div className="c4f-navigation-link">Jobs</div>
+                <div className="c4f-navigation-link">Network</div>
+                <div className="c4f-navigation-link">Profile</div>
+            </div>
+            <div className="c4f-icons">
+                <div className="c4f-nav-icon">
+                    <FontAwesome className="c4f-icon" name='bell' />
+                </div>
+                <div className="c4f-nav-icon">
+                    <FontAwesome className="c4f-icon" name='comment-alt' />
+                </div>
+                <div className="c4f-nav-icon">
+                    <FontAwesome className="c4f-icon" name='user' />
+                </div>
+            </div>
+        </div>
+    );
+};
