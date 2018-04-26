@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from './../../components/Container/Container';
 import FontAwesome from 'react-fontawesome';
+import history from './../../configs/history'
 
 import './ProfilePage.css';
 
@@ -43,6 +44,7 @@ export default class ProfilePage extends React.Component {
                             <div></div>
                         </Container> 
                     </div>
+                    <button onClick={() => history.push('/organization')}>Add Organization</button>
                 </div>
             </div>
         );

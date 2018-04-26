@@ -1,0 +1,23 @@
+.organization-container{
+    padding:3%;
+}
+
+    .organization-content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .org-content-title{
+            margin-top:2%;
+            font-size:0.9rem;
+        }
+
+        textarea{
+            resize: none;
+        }
+
+        .org-button-create{
+            margin:2%;
+            text-align: center;
+        }
