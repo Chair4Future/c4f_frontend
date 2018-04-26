@@ -1,0 +1,11 @@
+/* sm */
+@media screen and (min-width: 35.5em) {}
+
+/* md */
+@media screen and (min-width: 48em)	{}
+
+/* lg */
+@media screen and (min-width: 64em)	{}
+
+/* xl */
+@media screen and (min-width: 80em) {}

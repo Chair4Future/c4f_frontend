@@ -1,0 +1,54 @@
+.cf-container{
+    padding-right: 2%;
+    padding-bottom: 2%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;  
+}
+
+.cf-container-wrapper{
+    background-color: #fff;
+    box-shadow: 1px -1px 3px 0 rgba(126, 125, 125, 0.1);
+    border-radius: 2px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-rendering: optimizeSpeed;
+    font-weight: 300;
+    padding-bottom: 3%;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+    .cf-container-header{
+        padding: 20px 5%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+        .cf-container-title{
+            flex: 1;
+            color: #848484;
+            font-size: 1.1rem;
+        }
+
+        .cf-container-btn-option{
+
+            color: #bbb;
+        }
+
+    .cf-container-content{
+        padding: 0 5%;
+
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .cf-container-footer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }

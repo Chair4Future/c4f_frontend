@@ -71,7 +71,7 @@ const NavbarForm = (props) => {
                 
             </div>
             <div className="c4f-nav-item">
-                <button onClick={async () => await props.login()} className="c4f-button-full">Iniciar Sessão</button>
+                <button onClick={async () => await props.login()} className="cf-button blue">Iniciar Sessão</button>
             </div>
         </div>
     );

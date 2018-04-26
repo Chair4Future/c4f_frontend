@@ -1,3 +1,15 @@
+/* sm */
+@media screen and (min-width: 35.5em) {}
+
+/* md */
+@media screen and (min-width: 48em)	{}
+
+/* lg */
+@media screen and (min-width: 64em)	{}
+
+/* xl */
+@media screen and (min-width: 80em) {}
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--color-white);
@@ -36,27 +48,55 @@
     border: 2px solid #4dc7bd;
 }
 
-
-.c4f-button-full {
-    font-family: 'Nunito Sans', sans-serif;
-    color:var(--color-white);
-    font-weight: 700;
-    background-color: #193d9e;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 3px;
-    border: none;
-    width: 125px;
-    transition: background-color 100ms ease-in;
-}
-
-.c4f-button-full:hover{
-    background-color: #1a47c2;
-}
-
 .c4f-input-group{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+}
+
+
+.cf-button.blue {
+    background-color: #193d9e;
+}
+
+.cf-button.green {
+    background-color: #4dc7bd;
+}
+
+.cf-button.blue:hover{
+    background-color: #1a47c2;
+}
+
+.cf-button.green:hover{
+    background-color: #31a59b;
+}
+
+.cf-button {
+    font-family: 'Nunito Sans', sans-serif;
+    color:var(--color-white);
+    font-weight: 700;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    transition: background-color 100ms ease-in;
+}
+
+.cf-button-round {
+    border-radius: 20px
+}
+
+
+.cf-label-skill {
+    background-color: #f9f9f9;
+    color: #484646;
+    padding: 12px 18px;
+    margin: 3px 10px;
+    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;    
+    border-radius: 3px;
+    border: none;
 }

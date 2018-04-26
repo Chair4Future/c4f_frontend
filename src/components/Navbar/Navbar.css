@@ -54,6 +54,8 @@
         .no-password{
             color: var(--color-white);
             display: inline-block;
+            font-size: 0.8rem;
+            font-family: 'Nunito Sans', sans-serif;
         }
 
         /*END OF NAVBAR FORM*/
@@ -108,7 +110,7 @@
                 padding: 7px 3px;
                 color: var(--color-white);
                 font-family: 'Nunito Sans', sans-serif;
-                font-size: 1.2rem;
+                font-size: 0.8rem;
                 text-transform: uppercase;
                 transition: color 100ms ease-in;
             }
