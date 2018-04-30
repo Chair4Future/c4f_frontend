@@ -1,13 +1,15 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome'
 import { Link } from 'react-router-dom';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
+import PopupContainer from '../PopupContainer/PopupContainer'
 
 import history from './../../configs/history';
 
 import './Navbar.css';
 
 @inject("user")
+@observer
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -48,8 +50,8 @@ export default class Navbar extends React.Component {
                 <div className="c4f-navbar-wrapper">
                     <div className="c4f-navbar-logo" />
                     <div className="c4f-navbar-content">
-                        {/* {<AuthNavbar user={this.props.user.user}/>  } */}
-                        { this.props.user.user? <AuthNavbar user={this.props.user.user}/> : <NavbarForm login={this.handleLogin} email={el => this.email = el} password={el => this.password = el }/> }
+                        {<AuthNavbar user={this.props.user} />  }
+                        {/* { this.props.user.user? <AuthNavbar user={this.props.user} /> : <NavbarForm login={this.handleLogin} email={el => this.email = el} password={el => this.password = el }/> } */}
                     </div>
                 </div>
             </nav>
@@ -88,7 +90,7 @@ const AuthNavbar = (props) => {
                 <div className="c4f-navigation-link">Feed</div>
                 <div className="c4f-navigation-link">Jobs</div>
                 <div className="c4f-navigation-link">Network</div>
-                <div className="c4f-navigation-link">Profile</div>
+                <Link to="/profile"><div className="c4f-navigation-link">Profile</div></Link>
             </div>
             <div className="c4f-icons">
                 <div className="c4f-nav-icon">
@@ -100,7 +102,9 @@ const AuthNavbar = (props) => {
                 <div className="c4f-nav-icon">
                     <FontAwesome className="c4f-icon" name='user' />
                 </div>
+                <PopupContainer user={props.user}/>
             </div>
         </div>
     );
 };
+
