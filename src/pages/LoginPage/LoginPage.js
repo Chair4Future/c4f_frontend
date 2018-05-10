@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap'
 import axios from '../../configs/axios';
 import {Link} from 'react-router-dom'
 
@@ -63,8 +62,8 @@ export default class LoginPage extends React.Component {
 
 
     render() {
-        return (
-            <div className="c4f-login-page">
+        return (<div></div>
+            /*<div className="c4f-login-page">
                 <div className="c4f-container">
                     <div className="c4f-content">
                         <div className="c4f-column">
@@ -126,7 +125,7 @@ export default class LoginPage extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*/
         );
     };
 

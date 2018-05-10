@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 import FontAwesome from 'react-fontawesome'
-import { Grid, Row, Col } from 'react-bootstrap';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from './../components/Footer/Footer';
 
