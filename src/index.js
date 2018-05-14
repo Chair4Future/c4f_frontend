@@ -13,7 +13,7 @@ import './styles/buttons.css';
 
 
 ReactDOM.render(
-    <Provider user={stores.user}>
+    <Provider user={stores.user} organization={stores.organization}>
         <Router history={history}>
             <Routes />
         </Router>   
