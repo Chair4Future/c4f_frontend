@@ -87,7 +87,7 @@ const AuthNavbar = (props) => {
                 <input type="text" className="c4f-input-searchbar" placeholder="Search" />
             </div>
             <div className="c4f-navigation">
-                <div className="c4f-navigation-link">Feed</div>
+                <Link to="/feed"><div className="c4f-navigation-link">Feed</div></Link>
                 <div className="c4f-navigation-link">Jobs</div>
                 <div className="c4f-navigation-link">Network</div>
                 <Link to="/profile"><div className="c4f-navigation-link">Profile</div></Link>

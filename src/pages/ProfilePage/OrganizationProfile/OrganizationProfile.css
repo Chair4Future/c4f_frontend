@@ -1,0 +1,19 @@
+.profile-banner{
+    height: 250px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-242301.jpg');
+}
+
+.organization-profile-sidebar {
+    margin-top: -100px;
+    min-height: 100px;
+    padding:3%;
+    box-sizing: border-box;   
+}
+
+.organization-profile-container {
+    
+}

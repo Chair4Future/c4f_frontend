@@ -1,0 +1,183 @@
+
+.profile-content {
+    padding:3%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;   
+}
+
+.profile-content-wrapper {
+    width: 100%;
+}
+
+
+
+.profile-sidebar {
+    padding:3%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;   
+}
+
+    .profile-sidebar-wrapper {
+        background-color: #fff;
+        padding:10% 5%;
+        border-radius: 3px;
+        font-family: 'Roboto Condensed', sans-serif;
+        box-shadow: 2px 2px 6px 0 rgba(126, 125, 125, 0.07);
+    }
+
+        .profile-sidebar-main{}
+
+            .profile-sidebar-img{
+                text-align: center;
+            }
+            .profile-sidebar-img > div{
+                width: 140px;
+                height: 150px;
+                display: inline-block;
+                border-radius: 5px;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+        .profile-sidebar-main-info{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1rem;
+            padding-top: 4%;
+        }
+
+        .profile-sidebar-main-info > div {
+            padding: 4px 0;
+        }
+
+        .profile-name{
+            font-size: 1.2rem;
+        }
+        .profile-role{
+            color: #0c0c0c;
+            font-weight: 300;
+        }
+        .profile-local{
+            color: #8c8c8c;
+        }
+        .profile-button-connect{
+            display: inline-block;
+        }
+
+        .skills-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+        }
+/* COMPANY COMPONENT */
+.company-item {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+    flex: 1;
+}
+
+    .company-content {
+        display: block;
+        flex: 1;
+    }
+
+        .company-header {
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .company-header > .company{
+            color: var(--bg-primary);
+            font-size: 1.2rem;
+        }
+    .company-image {
+        padding-right: 10%;
+
+    }
+    .company-image > div {
+        width: 150px;
+        height: 100px;
+        
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        outline: none;
+        
+    }
+
+
+.cf-item-w-icon{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+    .cf-item-icon{
+   
+    }
+
+    .cf-item-text{
+        color: #999999;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+
+
+.experience-item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.experience-node-wrapper{
+    position: relative;
+    padding-right: 10px;
+}
+
+.experience-node{
+    position: relative;
+    height: 100%;
+    width: 30px;
+}
+.experience-node-line{
+    border-left: 3px solid var(--bg-primary);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+}
+.experience-node-icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.5rem;
+    color:var(--bg-primary);
+}
+
+    .experience-node-icon:before {
+        content: "\f111";
+        color: #fff;
+    }
+
+    .experience-node-icon:after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 2.5rem;
+        color:var(--bg-primary);
+        position: absolute;
+        content: "\f22d";
+    }
