@@ -13,7 +13,9 @@ import './Navbar.css';
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            redirect: false
+        }
         this.email = React.createRef();
         this.password = React.createRef();
 
@@ -21,18 +23,20 @@ export default class Navbar extends React.Component {
         // this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-     async handleLogin() {
+    async handleLogin() {
         const email = this.email.value;
         const password = this.password.value;
 
         let result = await this.props.user.AutenticateUser({ email: email, password: password })
         console.log(result)
-        if (result)
-            history.push('/profile');
+        if (result){
+           this.setState({redirect:true})
+           history.push('/profile')
+        }
         // display error
     }
 
-    static getDerivedStateFromProps(nextProps, prevState){
+    static getDerivedStateFromProps(nextProps, prevState) {
         console.log(nextProps)
     }
 
@@ -50,8 +54,8 @@ export default class Navbar extends React.Component {
                 <div className="c4f-navbar-wrapper">
                     <div className="c4f-navbar-logo" />
                     <div className="c4f-navbar-content">
-                        {<AuthNavbar user={this.props.user} />  }
-                        {/* { this.props.user.user? <AuthNavbar user={this.props.user} /> : <NavbarForm login={this.handleLogin} email={el => this.email = el} password={el => this.password = el }/> } */}
+                        {/* {<AuthNavbar user={this.props.user} />  } */}
+        {this.props.user.user ? <AuthNavbar user={this.props.user} /> : <NavbarForm login={this.handleLogin} email={el => this.email = el} password={el => this.password = el} />}
                     </div>
                 </div>
             </nav>
@@ -67,13 +71,12 @@ const NavbarForm = (props) => {
                     <input type="email" name="email" ref={props.email} className="c4f-input input-main c4f-nav-item" placeholder="Email" />
                     <input type="password" name="password" ref={props.password} className="c4f-input input-main c4f-nav-item" placeholder="Password" />
                 </div>
-                <div className="c4f-nav-item">
-                <a className="no-password">Esqueces-te da password?</a>
-                </div>
-                
             </div>
             <div className="c4f-nav-item">
-                <button onClick={async () => await props.login()} className="cf-button blue">Iniciar Sessão</button>
+                <button onClick={async () => await props.login()} className="cf-button transparent">Iniciar Sessão</button>
+            </div>
+            <div className="c4f-nav-item">
+                <a className="no-password">Esqueces-te da password?</a>
             </div>
         </div>
     );
@@ -102,7 +105,7 @@ const AuthNavbar = (props) => {
                 <div className="c4f-nav-icon">
                     <FontAwesome className="c4f-icon" name='user' />
                 </div>
-                <PopupContainer user={props.user}/>
+                {props.user.user && <PopupContainer user={props.user} />}
             </div>
         </div>
     );

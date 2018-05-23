@@ -72,6 +72,17 @@
     background-color: #43aca3;
 }
 
+.cf-button.transparent {
+    background-color:initial;
+    border:1px solid white;
+    padding: 7px 15px;
+}
+
+.cf-button.transparent:hover {
+    background-color:#4dc7bd;
+    color:white;
+}
+
 .cf-button {
     font-family: 'Nunito Sans', sans-serif;
     color:var(--color-white);

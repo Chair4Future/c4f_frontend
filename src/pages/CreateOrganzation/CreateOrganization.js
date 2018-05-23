@@ -24,11 +24,11 @@ export default class CreateOrganization extends React.Component {
     render() {
         const steps =
             [
-                { name: 'Step 1', component: <Step1 organization={this.props.organization} /> },
-                { name: 'Step 2', component: <Step2 organization={this.props.organization} /> },
-                { name: 'Step 3', component: <Step3 organization={this.props.organization} /> },
-                { name: 'Step 4', component: <Step4 organization={this.props.organization} /> },
-                { name: 'Step 5', component: <Step5 organization={this.props.organization} /> }
+                { name: 'General', component: <Step1 organization={this.props.organization} /> },
+                { name: 'Addresses', component: <Step2 organization={this.props.organization} /> },
+                { name: 'Contacts', component: <Step3 organization={this.props.organization} /> },
+                { name: 'Informations', component: <Step4 organization={this.props.organization} /> },
+                { name: 'End', component: <Step5 organization={this.props.organization} /> }
             ]
 
         return (
@@ -37,7 +37,7 @@ export default class CreateOrganization extends React.Component {
                     <Container title={"Create organization"} edit={false}>
                         <div className='step-progress'>
                             {/*nextTextOnFinalActionStep: "Save" é aplicado ao penultimo*/}
-                            <StepZilla steps={steps} stepsNavigation={false} nextTextOnFinalActionStep={"Save"} />
+                            <StepZilla steps={steps} stepsNavigation={false} nextTextOnFinalActionStep={"Create"} />
                         </div>
                     </Container>
                 </div>

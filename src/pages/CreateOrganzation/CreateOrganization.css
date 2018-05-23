@@ -1,5 +1,7 @@
 .organization-container{
     padding:3%;
+    width:65%;
+    margin:auto;
 }
 
     .organization-content{
@@ -7,11 +9,6 @@
         display: flex;
         justify-content: center;
     }
-
-    .cf-container{
-      width:55%;
-    }
-
 
         input{
 
@@ -115,3 +112,12 @@ ol.progtrckr {
     line-height: 1.2em;
     border-radius: 1.2em;
   }
+
+#next-button{
+  float:right;
+}
+
+.footer-buttons > button{
+  background-color:#06055f;
+  border:none;
+}

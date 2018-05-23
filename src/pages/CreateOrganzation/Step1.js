@@ -1,6 +1,6 @@
 import React from 'react';
 import t from './../../configs/tcomb';
-import { inject,observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
 
 const Form = t.form.Form;
@@ -8,14 +8,17 @@ const Form = t.form.Form;
 const Organization = t.struct({
     name: t.String,
     businessArea: t.String,
-    logo: t.String,
-    banner: t.String
+    logo: t.form.File,
+    banner: t.form.File
 })
 
 const options = {
     fields: {
-        businessArea: {
-            error: <i>Ola</i>
+        logo: {
+            type: "file"
+        },
+        banner: {
+            type: "file"
         }
     }
 }
@@ -31,10 +34,9 @@ export default class Step1 extends React.Component {
 
     isValidated() {
         const v = this.form.current.getValue();
-        let isDataValid =false; 
-        let org;
-        if(v){
-            org = this.props.organization.organizationUpdate({name : v.name, businessArea: v.businessArea, logo: v.logo, banner: v.banner})
+        let isDataValid = false;
+        if (v) {
+            this.props.organization.organizationUpdate({ name: v.name, businessArea: v.businessArea, logo: v.logo, banner: v.banner })
             return isDataValid = true;
         }
         return isDataValid;

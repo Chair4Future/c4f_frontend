@@ -12,18 +12,27 @@ const Organization = t.list(t.struct({
 }))
 
 const options = {
-    fields: {
-        
-    }
+    disableOrder: true
 }
 
 @observer
 export default class Step3 extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            value: [{
+                name: "",
+                email: "",
+                phone: ""
+              }]
+        };
         this.form = React.createRef();
         this.isValidated = this.isValidated.bind(this);
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({value});
     }
 
     isValidated() {
@@ -39,7 +48,7 @@ export default class Step3 extends React.Component {
     }
     render() {
         return (
-            <Form ref={this.form} type={Organization} options={options} />
+            <Form ref={this.form} type={Organization} options={options} value={this.state.value} onChange={this.onChange}/>
         )
     }
 }

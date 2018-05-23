@@ -50,9 +50,9 @@
         }
         .c4f-nav-item{
             margin: 0 10px;
+            color: var(--color-white);
         }
         .no-password{
-            color: var(--color-white);
             display: inline-block;
             font-size: 0.8rem;
             font-family: 'Nunito Sans', sans-serif;

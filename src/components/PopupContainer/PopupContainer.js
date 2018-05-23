@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
 import {Animated} from "react-animated-css";
 import { observer } from 'mobx-react';
+import history from './../../configs/history';
 
 import './popup-container.css';
 
@@ -16,6 +17,7 @@ export default class PopupContainer extends Component {
         this.showContainer = this.showContainer.bind(this);
         this.organizationSelected = this.organizationSelected.bind(this);
         this.switchBackToUser = this.switchBackToUser.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     showContainer(){
@@ -30,6 +32,11 @@ export default class PopupContainer extends Component {
 
     organizationSelected(id){
         this.props.user.organizationUpdate(id);
+    }
+
+    logout(){
+        this.props.user.userReset();
+        window.location.assign("/")
     }
 
     render(){
@@ -58,7 +65,7 @@ export default class PopupContainer extends Component {
                         })}
                     </div>
 
-                    <PopupContainerItem name="Logout" icon="sign-out-alt"/>
+                    <PopupContainerItem name="Logout" icon="sign-out-alt" click={this.logout}/>
                 </PopupContent>
             </div>
         );

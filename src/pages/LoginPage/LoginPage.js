@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from '../../configs/axios';
 import {Link} from 'react-router-dom'
-
+import Container from './../../components/Container/Container';
 import Countries from 'country-list';
 
 import './LoginPage.css';
@@ -62,70 +62,33 @@ export default class LoginPage extends React.Component {
 
 
     render() {
-        return (<div></div>
-            /*<div className="c4f-login-page">
-                <div className="c4f-container">
-                    <div className="c4f-content">
-                        <div className="c4f-column">
-                            <div className="c4f-login-form">
-                                <Grid fluid>
-                                    <Row className="show-grid">
-                                        <div className="c4f-column-title">Cria a tua conta</div>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={6}>
-                                            <div className="c4f-column-content-text">Primeiro Nome</div>
-                                            <input name="firstName" onChange={this.handleInputChange} className="c4f-column-content-input" />
-                                        </Col>
-                                        <Col lg={6}>
-                                            <div className="c4f-column-content-text">Apelido</div>
-                                            <input name="secondName" onChange={this.handleInputChange} className="c4f-column-content-input" /></Col>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={12}>
-                                            <div className="c4f-column-content-text">Email</div>
-                                            <input name="email" onChange={this.handleInputChange} className="c4f-column-content-input" type="email" />
-                                        </Col>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={12}>
-                                            <div className="c4f-column-content-text">Password</div>
-                                            <input name="password" onChange={this.handleInputChange} className="c4f-column-content-input" type="password" />
-                                        </Col>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={12}>
-                                            <div className="c4f-column-content-text">Confirmar Password</div>
-                                            <input name="confirmPassword" onChange={this.handleInputChange} className="c4f-column-content-input" type="password" />
-                                        </Col>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={12}>
-                                            <div className="c4f-column-content-text">Country</div>
-                                            <select onChange={(e) =>this.setState({country:(e.target.options[e.target.selectedIndex].value)})}>
-                                                {Object.keys(CountryList).map(key => {
-                                                    return <option  key={CountryList[key]} value={CountryList[key]}>{key.charAt(0).toUpperCase() + key.slice(1)}</option> 
-                                                })}
-                                            </select>
-                                        </Col>
-                                    </Row>
-                                    <Row className="show-grid">
-                                        <Col lg={12}>
-                                            <button onClick={this.handleSubmit} className="c4f-column-content-button">Criar conta
-                                            </button>
-                                        </Col>
-                                    </Row>
-                                </Grid>
-                            </div>
-                        </div>
-                        <div className="c4f-column">
-                            <div className="c4f-logo-image" style={{ textAlign: "center" }}>
-                                <div className="c4f-column-content-text" style={{ position: "absolute", marginTop: "150px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                            </div>
-                        </div>
+        return (
+            <section id="cover">
+            <div className="cover-container">
+              <div className="cover-registry">
+                  <div className="registry-header">Regista-te</div>
+                  <div className="registry-container">
+                    <div className="pure-g">
+                        <input className="registry-name-input pure-u-11-24" placeholder="Nome Próprio"/>
+                        <div className="pure-u-2-24"></div>
+                        <input className="registry-name-input pure-u-11-24" placeholder="Apelido"/>
                     </div>
-                </div>
-            </div>*/
+                    <div className="pure-g">
+                        <input className="registry-input pure-u-1" placeholder="Email"/>
+                    </div>
+                    <div className="pure-g">
+                        <input className="registry-input pure-u-1" placeholder="Password"/>
+                    </div>
+                    <div className="pure-g">
+                        <input className="registry-input pure-u-1" placeholder="Confirmar Password"/>
+                    </div>
+                    <div className="pure-g">
+                        <button className="registry">Registar</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </section>
         );
     };
 

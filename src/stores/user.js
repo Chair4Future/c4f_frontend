@@ -23,19 +23,20 @@ class User {
 
 class ObservableUser{
     //para testes, deve ser null
-    @observable user = {
-        token: null,
-        user_id: 1,
-        email: "luisnunes111@hotmail.com",
-        firstName: "Luis",
-        lastName: "Nunes",
-        nameComplete: "Luis Nunes",
-        image: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg',
-        organizations: [
-            {id: 1, name: 'Softinsa', img: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg'},
-            {id: 2, name: 'Critical', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CSW_Gradiente_rgb.png/220px-CSW_Gradiente_rgb.png'}
-        ]
-    }
+    // @observable user = {
+    //     token: null,
+    //     user_id: 1,
+    //     email: "luisnunes111@hotmail.com",
+    //     firstName: "Luis",
+    //     lastName: "Nunes",
+    //     nameComplete: "Luis Nunes",
+    //     image: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg',
+    //     organizations: [
+    //         {id: 1, name: 'Softinsa', img: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg'},
+    //         {id: 2, name: 'Critical', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CSW_Gradiente_rgb.png/220px-CSW_Gradiente_rgb.png'}
+    //     ]
+    // }
+    @observable user = null;
     @observable organization = null;
 
     @action async AutenticateUser(credentials) {
@@ -54,6 +55,10 @@ class ObservableUser{
             console.error(error);
         }
         return false;
+    }
+
+    @action userReset(){
+        this.user = null;
     }
 
     @action organizationUpdate(org) {

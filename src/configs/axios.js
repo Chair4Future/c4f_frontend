@@ -4,7 +4,7 @@ import StoredUser from './../stores/user';
  * @type {axios.Axios Config}
  */
 const configs = {
-    baseURL: "http://192.168.1.196:3000/",
+    baseURL: "http://localhost:3000/",
     headers: {
         common: {
             'Accept': 'application/json',
