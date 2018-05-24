@@ -31,7 +31,7 @@ export default class Navbar extends React.Component {
         console.log(result)
         if (result){
            this.setState({redirect:true})
-           history.push('/profile')
+           history.push('/organization/create')
         }
         // display error
     }
