@@ -33,7 +33,7 @@ colors{
   --primary-color: #0ba092;
   --secondary-color: #00b09b;
   --bg-primary: #329094;
-  --color-white: #f5f7f1;
+  --color-white: #f5f5f5;
   /* FONTS */
   --font-main: "Open Sans Condensed";
   --font-extra: "Archivo Narrow";
@@ -152,6 +152,7 @@ a {
 .cf-info-field{
   display: block;
   text-align: left;
+  padding-bottom: 10px;
 }
 .cf-info-field-title{
   text-transform: uppercase;

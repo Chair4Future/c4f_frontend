@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './feed.css';
 import FontAwesome from 'react-fontawesome';
 import axios from '../../configs/axios';
+import { observer, inject } from 'mobx-react';
 
 export default class Feed extends Component {
     state = {
@@ -17,7 +18,6 @@ export default class Feed extends Component {
                 title: "O primeiro post",
                 image: "http://backgroundcheckall.com/wp-content/uploads/2017/12/background-company.png",
                 text: "Has closed eyes but still sees you sleep on dog bed, force dog to sleep on floor but ask for petting somehow manage to catch a bird but have no idea what to do next, so play with it until it dies of shock. Sit on human they not getting up ever dream about hunting birds claw your carpet in places everyone can see - why hide my amazing artistic clawing skills? yet attack the dog then pretend like nothing happened hiss and stare at nothing then run suddenly away if human is on laptop sit on the keyboard. Fooled again thinking the dog likes me roll on the floor purring your whiskers off for intently stare at the same spot scratch the box pose purrfectly to show my beauty and leave fur on owners clothes. Vommit food and eat it again. Hide head under blanket so no one can see lick human with sandpaper tongue wake up human for food at 4am but annoy kitten brother with poking. Sniff other cat's butt and hang jaw half open thereafter get video posted to internet for chasing red dot find empty spot in cupboard and sleep all day.",
-                commentsNumber: 12,
                 likes: 1923,
                 views: 1
             }
@@ -45,12 +45,17 @@ const Sidebar = () => {
     );
 }
 
+
+@inject("user")
+@observer
 class WritePublication extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             company_id: "01079c6f-85b5-4d41-90e8-bccb2b77f863",
-            fileName_img: ""
+            fileName_img: "",
+            imageUpload: false
+            
         }
         this.fileUpload = React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -85,31 +90,52 @@ class WritePublication extends React.Component {
         console.log(response)
     }
 
+    selectImage = () => {
+        this.setState({imageUpload: true});
+    }
+
+    //outsystems
+    //noesis
+    //critical
+    //softinsa 
     render() {
+        const { organization, user} = this.props.user;
+        const currentOrganization = organization? user.organizations.find(q => q.id === organization) : null;
+
+        console.log(this.props)
         return (
-            <div className="write-publication-column">
-                <div className="publication-box">
-                    <div className="textarea-header pure-g">
-                        <div className="pure-u-2-5">
-                            <label><FontAwesome name='edit' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", marginRight: 12 + "px" }} />Share an update</label>
+        currentOrganization && 
+            <div>
+                <div className="write-publication-column">
+                    <div className="publication-box">
+                        <div className="write-publication-box-wrapper">
+                            <div className="publication-box-title">
+                                <input name="title" className="publication-input" onChange={this.handleInputChange} placeholder="Title"/>
+                            </div>
+                            <div className="publication-box-textarea">
+                                <textarea className="publication-textarea" name="text" placeholder="Share what's in your mind..." onChange={this.handleInputChange}></textarea>
+                            </div>
+                            <div className="publication-box-footer">
+                                <div className="publication-box-image">
+                                    {!this.state.imageUpload && <FontAwesome name='image' className="publication-box-image-icon" onClick={this.selectImage}/>}
+                                    {this.state.imageUpload && <input id="file-input" type="file" name="img" ref={(ref) => this.fileUpload = ref}/>}
+                                </div>
+                                <button className="publication-send-button" onClick={this.handleSubmit}>
+                                    <span>Post</span><FontAwesome name='share' id="publication-button-icon"/>
+                                </button>
+                            </div>
+                            <div className="publication-box-user">
+                                <span>publish as: </span> 
+                                <div className="publication-user-info-container">
+                                    <div style={{ backgroundImage: 'url(' + currentOrganization.img + ')' }}/>
+                                    <span>{currentOrganization.name}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div className="pure-u-3-5">
-                            Title: <input name="title" onChange={this.handleInputChange} /></div>
                     </div>
-                    <div className="pure-g textarea-wrapper">
-                        <div className="pure-u-1 textarea-container">
-                            <textarea className="textarea" name="text" placeholder="Share what's in your mind" onChange={this.handleInputChange}></textarea>
-                            <label for="file-input">
-                                <FontAwesome name='image' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", marginLeft: 18 + "px", color: "grey", cursor: "pointer" }} />
-                            </label>
-                            <input id="file-input" type="file" name="img" ref={(ref) => this.fileUpload = ref}/>
-                        </div>
-                    </div>
-                    <button className="publication-send" onClick={this.handleSubmit}>
-                        <FontAwesome name='share-alt' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", color: "grey" }} /></button>
                 </div>
             </div>
-        );
+        )       
     }
 }
 
@@ -145,7 +171,6 @@ const PublicationBox = ({ item, ...props }) => {
                         <div className="publication-date">{new Date(item.date).toLocaleDateString()}</div>
                         <div className="publication-numbers">
                             <InfoNumber icon="fas fa-heart" text={item.likes} />
-                            <InfoNumber icon="fas fa-comment-alt" text={item.commentsNumber} />
                             <InfoNumber icon="fas fa-eye" text={item.views} />
                         </div>
                     </div>
