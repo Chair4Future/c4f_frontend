@@ -3,6 +3,7 @@ import Container from './../../../components/Container/Container';
 import FontAwesome from 'react-fontawesome';
 
 import './UserProfile.css';
+import { InfoField } from '../OrganizationProfile/OrganizationProfile';
 
 export default class UserProfile extends React.Component {
     constructor(props) {
@@ -208,9 +209,9 @@ const ProfileSidebar = (props) => {
                 </div>
             </div>
             <div className="profile-sidebar-following">
-                <div>link chair4future</div>
-                <div>site pessoal</div>
-                <div>icons de outras redes sociais</div>
+                <InfoField title="Email" text="chair4future@ae.com"/>
+                <InfoField title="Website" text="www.chair4future.com"/>
+                <InfoField title="Facebook" text={<a href="http://www.facebook.com">www.facebook.com</a>}/>
             </div>
         </div>
     );

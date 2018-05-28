@@ -23,8 +23,9 @@ export default class OrganizationProfile extends Component {
     async componentDidMount(){
         try {
             const response = await client.get('/company/'+this.state.id);
-            console.log(response);
-            if(response === 200){
+            console.log(response)
+            
+            if(response.status === 200){
                 this.setState({data: response.data.company})
             }
         } catch (error) {
@@ -38,7 +39,7 @@ export default class OrganizationProfile extends Component {
             <div>
                 <Banner style={{backgroundImage: `url('http://static.goal.com/4323400/4323432_news.jpg')`}}/>
                 <div className="pure-g" style={{ marginBottom: "5%"}}>
-                    <OrganizationSidebar />   
+                    <OrganizationSidebar organization={this.state.data}/>   
                     <OrganizationContainer />
                 </div>
             </div>
@@ -48,7 +49,6 @@ export default class OrganizationProfile extends Component {
 }
 
 const OrganizationContainer = (props) => {
-
     return(
         <div className="organization-profile-container pure-u-md-17-24 pure-u-lg-18-24" style={{paddingRight: "10%", paddingLeft: "3%"}}>
             <Container title={"About Us"} color="blue" noPadding={true} >
@@ -80,9 +80,10 @@ const OrganizationContainer = (props) => {
 }
 
 
-const OrganizationSidebar = () => {
+const OrganizationSidebar = ({organization, ...props}) => {
+    console.log(organization)
     return (
-        <div className="pure-u-md-7-24 pure-u-lg-6-24" style={{position: "relative", paddingLeft: "5%"}} >
+        <div className="pure-u-md-7-24 pure-u-lg-6-24" style={{position: "relative"}} >
             <div className="organization-profile-sidebar">
                 <div className="profile-sidebar-wrapper">
                     <div className="profile-sidebar-main">
@@ -91,7 +92,7 @@ const OrganizationSidebar = () => {
                         </div>
                         <div className="profile-sidebar-main-info">
 
-                            <div className="profile-name">IBM</div>
+                            <div className="profile-name">{organization && organization.name}</div>
                             <div className="profile-role">1,230,200 followers</div>
                             <hr style={{marginBottom:"10px"}}/>
 
@@ -114,7 +115,7 @@ const OrganizationSidebar = () => {
     );
 }
 
-const InfoField = (props) => {
+export const InfoField = (props) => {
     return(
         <div className="cf-info-field">
             <div className="cf-info-field-title">{props.title}</div>
