@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './feed.css';
 import FontAwesome from 'react-fontawesome';
+import axios from '../../configs/axios';
 
 export default class Feed extends Component {
     state = {
@@ -44,28 +45,72 @@ const Sidebar = () => {
     );
 }
 
-const WritePublication = (state) => {
-    state = {
-        writeFalse: true
+class WritePublication extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            company_id: "01079c6f-85b5-4d41-90e8-bccb2b77f863",
+            fileName_img: ""
+        }
+        this.fileUpload = React.createRef();
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
-    return (
-        <div className="write-publication-column">
-            <div className="publication-box">
-                <div className="textarea-header pure-g">
-                    <div className="pure-u-2-3">
-                        <label><FontAwesome name='edit' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginRight:12+"px" }} />Share an update</label>
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({ [name]: value });
+    }
+
+    async handleSubmit() {
+        var test = new FormData();
+        test.append("file", this.fileUpload.files[0])
+        let result;
+        await axios.post('/file', test).then(response => { return response
+        }).then(body => {
+            return this.setState({fileName_img: body.data.filename})
+        });
+
+        var toSend = {
+            title: this.state.title,
+            text: this.state.text,
+            brand_image: this.state.fileName_img,
+            company_id: this.state.company_id
+        }
+
+        let response = axios.post("/publication", toSend);
+        console.log(response)
+    }
+
+    render() {
+        return (
+            <div className="write-publication-column">
+                <div className="publication-box">
+                    <div className="textarea-header pure-g">
+                        <div className="pure-u-2-5">
+                            <label><FontAwesome name='edit' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", marginRight: 12 + "px" }} />Share an update</label>
+                        </div>
+                        <div className="pure-u-3-5">
+                            Title: <input name="title" onChange={this.handleInputChange} /></div>
                     </div>
-                </div>
-                <div className="pure-g textarea-wrapper">
-                    <div className="pure-u-1 textarea-container">
-                        <textarea className="textarea" placeholder="Share what's in your mind"></textarea>
-                        <FontAwesome name='image' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", marginLeft:18+"px", color:"grey" }} />
+                    <div className="pure-g textarea-wrapper">
+                        <div className="pure-u-1 textarea-container">
+                            <textarea className="textarea" name="text" placeholder="Share what's in your mind" onChange={this.handleInputChange}></textarea>
+                            <label for="file-input">
+                                <FontAwesome name='image' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", marginLeft: 18 + "px", color: "grey", cursor: "pointer" }} />
+                            </label>
+                            <input id="file-input" type="file" name="img" ref={(ref) => this.fileUpload = ref}/>
+                        </div>
                     </div>
+                    <button className="publication-send" onClick={this.handleSubmit}>
+                        <FontAwesome name='share-alt' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize: "20px", color: "grey" }} /></button>
                 </div>
-                <button className="publication-send"><FontAwesome name='share-alt' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', fontSize:"20px", color:"grey" }} /></button>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 const FeedContainer = (props) => {
