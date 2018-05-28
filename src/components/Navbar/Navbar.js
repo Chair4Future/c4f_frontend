@@ -68,8 +68,8 @@ const NavbarForm = (props) => {
         <div className="no-auth-content">
             <div className="c4f-navbar-form">
                 <div className="c4f-navbar-inputs">
-                    <input type="email" name="email" ref={props.email} className="c4f-input input-main c4f-nav-item" placeholder="Email" />
-                    <input type="password" name="password" ref={props.password} className="c4f-input input-main c4f-nav-item" placeholder="Password" />
+                    <input type="email" name="email" value="admin@a.aa" ref={props.email} className="c4f-input input-login c4f-nav-item" placeholder="Email" />
+                    <input type="password" name="password" value="123qweASD" ref={props.password} className="c4f-input input-login c4f-nav-item" placeholder="Password" />
                 </div>
             </div>
             <div className="c4f-nav-item">

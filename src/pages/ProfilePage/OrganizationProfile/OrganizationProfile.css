@@ -8,12 +8,25 @@
 }
 
 .organization-profile-sidebar {
-    margin-top: -100px;
+    /* transform: translateY(-40%); */
+    margin-top: -120px;
     min-height: 100px;
-    padding:3%;
     box-sizing: border-box;   
+
+    width: 100%;
+    padding: 0 10%;
+}
+
+.organization-img{
+    text-align: center;
+}
+
+.organization-img > img{
+    width: 170px;
+    height: 170px;
 }
 
 .organization-profile-container {
-    
+    min-height: 300px;
+    padding-top: 20px;
 }

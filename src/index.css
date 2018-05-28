@@ -59,9 +59,9 @@ html, button, input, select, textarea,
     font-family: inherit;
 }
 hr {
-  border-color: #329094;
-  border-top: 1px;
-  width: 90%;
+  border-color: #3f58b1;
+  margin: 0 auto;
+  width: 80%;
 }
 a {
   text-decoration: none;
@@ -70,9 +70,10 @@ a {
 }
 
   a:hover {
-    color: var(--color-white);
+    color: inherit;
     outline: none;
     cursor: pointer;
+    text-decoration: none;
   }
 
 .layout {
@@ -108,4 +109,56 @@ a {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   font-size: 15px;
   color: #cacaca;
+}
+
+
+
+.cf-container-btn-option:hover > span{
+    color: #333;
+    cursor: pointer;
+    transition: color 100ms ease-in;
+
+}
+
+
+
+.cf-button-icon {
+  background-color: transparent;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  padding: 5px;
+}
+.cf-button-icon > span {
+  width: 23px;
+}
+.cf-button-icon:hover {
+  background-color: #f1f1f1;
+  border-color: #3f58b1;
+}
+
+.cf-button-icon.exit{
+  margin-right: 10px;
+}
+
+.cf-button-icon.exit > span{
+  color: #e86969;
+}
+
+.cf-button-icon.save > span{
+  color: #17b565;
+}
+
+
+.cf-info-field{
+  display: block;
+  text-align: left;
+}
+.cf-info-field-title{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #3f58b1;
+}
+
+.cf-info-field-text{
+  font-weight: 300;
 }

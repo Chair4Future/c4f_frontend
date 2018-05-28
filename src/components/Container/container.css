@@ -20,7 +20,7 @@
     flex-direction: column;
 }
     .cf-container-header{
-        padding: 20px 5%;
+        padding: 10px 5%;
 
         display: flex;
         flex-direction: row;
@@ -29,8 +29,14 @@
 
         .cf-container-title{
             flex: 1;
-            color: #848484;
-            font-size: 1.1rem;
+            color: #4a4a4a;
+            font-size: 1.3rem;
+        }
+
+        .cf-container-title.blue{
+            color: #3f58b1;
+            font-size: 1.4rem;
+            font-weight: 500;
         }
 
         .cf-container-btn-option{

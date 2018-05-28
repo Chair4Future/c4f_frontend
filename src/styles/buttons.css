@@ -10,18 +10,37 @@
 /* xl */
 @media screen and (min-width: 80em) {}
 
+select {
+    padding: 6px 10px !important;
+}
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.input-login::placeholder,
+.c4f-input-searchbar::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--color-white);
     opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.input-login:-ms-input-placeholder,
+.c4f-input-searchbar:-ms-input-placeholder  { /* Internet Explorer 10-11 */
     color: var(--color-white);
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+.input-login::-ms-input-placeholder,
+.c4f-input-searchbar::-ms-input-placeholder { /* Microsoft Edge */
     color:var(--color-white);
+}
+
+.input-form::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #555;
+    opacity: 1; /* Firefox */
+}
+
+.input-form:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #555;
+}
+
+.input-form::-ms-input-placeholder { /* Microsoft Edge */
+    color:#555;
 }
 
 .c4f-input {
@@ -39,13 +58,21 @@
         box-shadow: 0 1px 8px 0 #29b8ac;
     }
 
-.input-main{
+.input-login{
     border: none;
     background-color: #59c1b8;
 }
 
 .input-form{
-    border: 2px solid #4dc7bd;
+    border: 1px solid #324dad;
+    border-radius: 3px;
+    padding: 5px 20px;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.input-form:focus{
+    box-shadow: 0 0 4px 0px #869cec;
 }
 
 .c4f-input-group{
@@ -57,16 +84,18 @@
 
 
 .cf-button.blue {
-    background-color: #193d9e;
+    /* background-color: #193d9e; */
+    background-color: #3f58b1;
+}
+
+.cf-button.blue:hover{
+    background-color: #334da8;
 }
 
 .cf-button.green {
     background-color: #4dc7bd;
 }
 
-.cf-button.blue:hover{
-    background-color: #1a47c2;
-}
 
 .cf-button.green:hover{
     background-color: #43aca3;
@@ -100,15 +129,33 @@
 }
 
 
-.cf-label-skill {
-    background-color: #495bda;
+.cf-skill-label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+    background-color: #3f58b1;
     color: #fff;
-    padding: 12px 18px;
-    margin: 3px 10px;
+    margin: 3px 10px 3px 0;
     font-weight: 400;
     font-family: 'Nunito Sans', sans-serif;
     text-transform: uppercase;
     font-size: 0.8rem;    
-    border-radius: 3px;
-    border: none;
+    border-radius: 4px;
+    border: 1px solid #3f58b1;
+    
+}
+
+.cf-skill-label-level {
+    background-color: #fff;
+    color: #3f58b1;
+    padding: 9px 18px;
+    font-weight: 700;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.cf-skill-label-name {
+    padding: 9px 18px;
 }

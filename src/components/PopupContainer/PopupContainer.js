@@ -48,7 +48,7 @@ export default class PopupContainer extends Component {
             <div className="popup-container">
                 <div onClick={this.showContainer} className={open? "popup-container-button active": "popup-container-button"}>
                     {currentOrganization == null? 
-                        <PopupContainerUser id={user.id} isVisible={true} name={user.nameComplete} img={user.image} icon="ellipsis-v" />
+                        <PopupContainerUser id={user.id} isVisible={true} name={user.name} img={user.image} icon="ellipsis-v" />
                         :
                         <PopupContainerUser id={currentOrganization.id} isVisible={true} name={currentOrganization.name} img={currentOrganization.img} icon="ellipsis-v" />
                     }

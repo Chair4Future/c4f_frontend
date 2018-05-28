@@ -4,22 +4,16 @@ import StoredUser from './../stores/user';
  * @type {axios.Axios Config}
  */
 const configs = {
-    baseURL: "http://localhost:3000/",
+    baseURL: "http://192.168.1.34:3000/",
     headers: {
         common: {
             'Accept': 'application/json',
             'Accept-Version': '1.0.0'
-        }, 
-        post: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        get: {
-            "Content-Type": "application/json"
         }
     }
 };
 
-const instance = axios.create(configs);
+export const client = axios.create(configs);
 
 axios.interceptors.response.use(
     successResponse => successResponse,
@@ -34,4 +28,4 @@ axios.interceptors.response.use(
     }
 );
 
-export default instance;
+export default client;

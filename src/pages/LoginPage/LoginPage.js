@@ -15,8 +15,8 @@ export default class LoginPage extends React.Component {
         this.state = {
             firstName:undefined,
             secondName:undefined,
-            email:undefined,
-            password:undefined,
+            email: undefined,
+            password: undefined,
             confirmPassword:undefined,
             country: 'AF'
         }
