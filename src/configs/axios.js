@@ -3,8 +3,11 @@ import StoredUser from "./../stores/user";
 /**
  * @type {axios.Axios Config}
  */
+
+// http://demo.chair4future.ipt.pt/
+//http://localhost:3000
 export const configs = {
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://demo.chair4future.ipt.pt/",
   headers: {
     common: {
       Accept: "application/json",

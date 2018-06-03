@@ -5,6 +5,8 @@ import { observer } from "mobx-react";
 import history from "./../../configs/history";
 
 import "./popup-container.css";
+import { removeUser } from "../../stores/user";
+import { configs } from "../../configs/axios";
 
 @observer
 export default class PopupContainer extends Component {
@@ -35,7 +37,7 @@ export default class PopupContainer extends Component {
   }
 
   logout() {
-    this.props.user.userReset();
+    removeUser();
     window.location.assign("/");
   }
 
@@ -85,21 +87,25 @@ export default class PopupContainer extends Component {
 
           <PopupContainerDivider name="My Organizations" />
           <div className="popup-container-organizations">
-            {user.organizations.map(org => {
-              return (
-                <PopupContainerUser
-                  id={org.id}
-                  key={"c" + org.id}
-                  isSelected={
-                    currentOrganization && currentOrganization.id === org.id
-                  }
-                  isVisible={true}
-                  name={org.name}
-                  img={org.logo}
-                  click={this.organizationSelected}
-                />
-              );
-            })}
+            {user.organizations && user.organizations.length > 0 ? (
+              user.organizations.map(org => {
+                return (
+                  <PopupContainerUser
+                    id={org.id}
+                    key={"c" + org.id}
+                    isSelected={
+                      currentOrganization && currentOrganization.id === org.id
+                    }
+                    isVisible={true}
+                    name={org.name}
+                    img={org.logo && configs.baseURL + "file/" + org.logo}
+                    click={this.organizationSelected}
+                  />
+                );
+              })
+            ) : (
+              <div className="popup-organizations-none">none</div>
+            )}
           </div>
 
           <PopupContainerItem

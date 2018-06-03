@@ -44,12 +44,26 @@ export default class Feed extends Component {
         loading: false
       });
   }
-
-  insertPostToFeed = post => {
+  //adiciona o novo post às publications existentes
+  insertPostToFeed = (post, userData) => {
     console.log(post);
+    const { organization, user } = userData;
+    const currentOrganization = organization
+      ? user.organizations.find(q => q.id === organization)
+      : null;
+
     this.setState({
-      publications: [...this.state.publications, { ...post, isnew: true }]
-    }); //adiciona o novo post às publications existentes
+      publications: [
+        ...this.state.publications,
+        {
+          ...post,
+          isnew: true,
+          company_id: currentOrganization.id,
+          company_logo: currentOrganization.logo,
+          company_name: currentOrganization.name
+        }
+      ]
+    });
   };
   render() {
     return (
@@ -156,7 +170,7 @@ class WritePublication extends React.Component {
         title: "",
         text: ""
       });
-      this.props.insertPostToFeed(response.data.publication);
+      this.props.insertPostToFeed(response.data.publication, this.props.user);
     }
   }
 
@@ -231,7 +245,14 @@ class WritePublication extends React.Component {
                   <div className="publication-user-info-container">
                     <div
                       style={{
-                        backgroundImage: "url(" + currentOrganization.logo + ")"
+                        backgroundImage:
+                          "url(" +
+                          (currentOrganization.logo
+                            ? configs.baseURL +
+                              "file/" +
+                              currentOrganization.logo
+                            : "") +
+                          ")"
                       }}
                     />
                     <span> {currentOrganization.name} </span>
@@ -272,13 +293,15 @@ const PublicationBox = ({ item, ...props }) => {
           <div
             className="publication-header-image"
             style={{
-              backgroundImage: "url(" + item.company && item.company.image + ")"
+              backgroundImage:
+                "url(" + item.company_logo &&
+                configs.baseURL + "file/" + item.company_logo + ")"
             }}
           />
           <div className="publication-header-info">
             <div className="publication-header-title"> {item.title} </div>
             <div className="publication-header-company">
-              {item.company && item.company.name}
+              {item.company_name && item.company_name}
             </div>
           </div>
         </div>

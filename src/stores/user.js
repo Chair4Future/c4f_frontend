@@ -1,7 +1,7 @@
 //https://mobx.js.org/
 //server para gerir o estado geral da aplicação
 import { observable, action } from "mobx";
-import axios from "../configs/axios";
+import axios, { configs } from "../configs/axios";
 
 class User {
   constructor(user = {}) {
@@ -10,7 +10,7 @@ class User {
     this.email = user.email || null;
     this.name = user.name;
     this.image =
-      user.image ||
+      (user.image && configs.baseURL + "file/" + user.image) ||
       "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
     this.organizations = user.organizations;
     // [
@@ -35,7 +35,7 @@ class ObservableUser {
   //         {id: 2, name: 'Critical', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CSW_Gradiente_rgb.png/220px-CSW_Gradiente_rgb.png'}
   //     ]
   // }
-  @observable user = null;
+  @observable user = loadUser();
   @observable organization = null;
 
   @action
@@ -47,15 +47,16 @@ class ObservableUser {
       if (response.status === 200) {
         const token = response.data.token;
         const { id, name, email, photo, companies } = response.data.user;
-        this.user = new User({
+        const user = {
           token: token,
           user_id: id,
           email: email,
           name: name,
           image: photo,
           organizations: companies
-        });
-        axios.defaults.headers.common["Authorization"] = token;
+        };
+        this.user = new User(user);
+        saveUser(user);
         return true;
       }
     } catch (error) {
@@ -80,5 +81,22 @@ class ObservableUser {
     this.organization = null;
   }
 }
-
 export default new ObservableUser();
+
+export const saveUser = user => {
+  sessionStorage.setItem("user", JSON.stringify(user));
+  axios.defaults.headers.common["Authorization"] = user.token;
+};
+
+export const loadUser = () => {
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  if (user) {
+    axios.defaults.headers.common["Authorization"] = user.token;
+    return new User(user);
+  } else return null;
+};
+
+export const removeUser = () => {
+  sessionStorage.removeItem("user");
+  axios.defaults.headers.common["Authorization"] = null;
+};

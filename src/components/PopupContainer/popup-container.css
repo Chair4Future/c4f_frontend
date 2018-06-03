@@ -68,6 +68,11 @@
   margin: 0 5%;
 }
 
+.popup-organizations-none {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 6px;
+}
 .popup-container-organizations .popup-container-user:hover {
   background-color: #e7eceb;
 }
@@ -78,7 +83,7 @@
 
 .popup-container-organizations {
   background-color: #eef3f2;
-  padding: 4px 0;
+  /* padding: 4px 0; */
 }
 
 .popup-container-divider {
@@ -112,7 +117,6 @@
   flex-direction: row;
 
   cursor: pointer;
-  margin-top: 5px;
   background-color: #3ca0a5;
   border: none;
 }
