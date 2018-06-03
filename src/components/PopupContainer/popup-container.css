@@ -1,130 +1,131 @@
-.popup-container{
-    position: relative;
-    min-width: 200px;
-    font-family: 'Roboto Condensed', sans-serif;
-    outline: 0;
-    margin: 0 15px;
+.popup-container {
+  position: relative;
+  min-width: 200px;
+  font-family: "Roboto Condensed", sans-serif;
+  outline: 0;
+  margin: 0 15px;
 }
-.popup-container-button{
-    background-color: #1e7d82;
-    color: #eee;
-    cursor: pointer;
-    transition: background-color 0.08s ease-in-out;
-    padding: 5px 15px 5px 5px;
-    border-radius: 4px;
+.popup-container-button {
+  background-color: #1e7d82;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.08s ease-in-out;
+  padding: 5px 15px 5px 5px;
+  border-radius: 4px;
 }
-.popup-container-button:hover, .popup-container-button.active{
-    background-color: #73ccc4;
-}
-
-.popup-container-content{
-    position: absolute;
-    z-index: 200;
-    background-color: #fff;
-    min-width: 200px;
-    margin-top: 5px;
-
-    box-shadow: 1px 0px 5px 0 rgba(126, 125, 125, 0.6);
-    border-radius: 2px;
-
-}
-    .popup-container-user{
-        cursor: pointer;
-        padding: 3px 0;
-
-        display: flex;
-        align-items: center;
-        flex-wrap: nowrap;
-        flex-direction: row;
-    }
-        .popup-user-content{
-            flex:1;
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
-        }
-            .popup-user-img{
-                width: 40px;
-                min-width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                background-position: center center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                margin:0 5%;
-            }
-            .popup-user-name{
-                margin:0 5%;
-                flex: 1;
-                text-align: center;
-            }
-
-        .popup-user-icon{
-            margin:0 5%;
-        }
-
-    .popup-container-organizations .popup-container-user:hover{
-        background-color: #e7eceb
-    }
-
-    .popup-container-organizations .popup-container-user.active{
-        background-color: #c2e6df;
-    }
-
-    
-
-.popup-container-organizations{
-    background-color: #eef3f2;
-    padding:4px 0;
+.popup-container-button:hover,
+.popup-container-button.active {
+  background-color: #73ccc4;
 }
 
-.popup-container-divider{
-    /* border-bottom: 1px;
+.popup-container-content {
+  position: absolute;
+  z-index: 200;
+  background-color: #fff;
+  min-width: 200px;
+  margin-top: 5px;
+
+  box-shadow: 1px 0px 5px 0 rgba(126, 125, 125, 0.6);
+  border-radius: 2px;
+}
+.popup-container-user {
+  cursor: pointer;
+  padding: 3px 0;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.popup-user-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.popup-user-img {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 5%;
+}
+.popup-user-name {
+  margin: 0 5%;
+  flex: 1;
+  text-align: center;
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-user-icon {
+  margin: 0 5%;
+}
+
+.popup-container-organizations .popup-container-user:hover {
+  background-color: #e7eceb;
+}
+
+.popup-container-organizations .popup-container-user.active {
+  background-color: #c2e6df;
+}
+
+.popup-container-organizations {
+  background-color: #eef3f2;
+  padding: 4px 0;
+}
+
+.popup-container-divider {
+  /* border-bottom: 1px;
     border-left: 0;
     border-right: 0;
     border-top: 0;
     border-color: #121c64;
     border-style: solid; */
-    margin: 3% 10% 0 10%;
+  margin: 3% 10% 0 10%;
 }
 
-.divider-name{
-    color: #121c64;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    padding: 1px 0 4px 0;
+.divider-name {
+  color: #121c64;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 1px 0 4px 0;
 }
 
-.divider-name.header{
-    font-weight: 700;
-    text-align: center;
-}
-        
-.popup-container-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-
-    cursor: pointer;
-    margin-top: 5px;
-    background-color: #3ca0a5;
-    border: none;
+.divider-name.header {
+  font-weight: 700;
+  text-align: center;
 }
 
-.popup-container-item:hover{
-    background-color: #2fb7ab;
-    color: #fff;
+.popup-container-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  cursor: pointer;
+  margin-top: 5px;
+  background-color: #3ca0a5;
+  border: none;
 }
-    .popup-item-name{
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        color: #eee;
-        padding: 10px 15px;
-    }
-    .popup-item-icon{
-        
-    }
+
+.popup-container-item:hover {
+  background-color: #2fb7ab;
+  color: #fff;
+}
+.popup-item-name {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #eee;
+  padding: 10px 15px;
+}
+.popup-item-icon {
+}

@@ -1,4 +1,4 @@
-colors{
+colors {
   /* VERDES */
   color: #96cecc;
   color: #8cb8c9;
@@ -11,9 +11,9 @@ colors{
   color: #434a54;
   color: #3c3b3d;
   color: #323133;
-  
+
   /* WILD */
-  color: #E0c341;
+  color: #e0c341;
   color: #d8334a;
   color: #8067b7;
   color: #48cfad;
@@ -28,7 +28,7 @@ colors{
   color: #e6e9ed;
 }
 
-:root{
+:root {
   /* COLORS */
   --primary-color: #0ba092;
   --secondary-color: #00b09b;
@@ -46,7 +46,6 @@ colors{
   --breakpoint-xl: 1200px;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -54,9 +53,13 @@ body {
   background-color: #ececec;
 }
 
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
-    font-family: inherit;
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*="pure-u"] {
+  font-family: inherit;
 }
 hr {
   border-color: #3f58b1;
@@ -69,12 +72,12 @@ a {
   outline: none;
 }
 
-  a:hover {
-    color: inherit;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
+a:hover {
+  color: inherit;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
 
 .layout {
   width: 100%;
@@ -85,19 +88,19 @@ a {
   flex-wrap: nowrap;
 }
 
-.c4f-default-container{
+.c4f-default-container {
   flex: 1;
+  min-height: 600px;
 }
 
 /* TITLES */
 .title-h1 {
-    font-weight: 700;
-    font-size: 4rem;
-    font-family: var(--font-main), sans-serif;
-    color: var(--secondary-color);
-    padding:0 10%;
+  font-weight: 700;
+  font-size: 4rem;
+  font-family: var(--font-main), sans-serif;
+  color: var(--secondary-color);
+  padding: 0 10%;
 }
-
 
 .c4f-icon {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -111,16 +114,11 @@ a {
   color: #cacaca;
 }
 
-
-
-.cf-container-btn-option:hover > span{
-    color: #333;
-    cursor: pointer;
-    transition: color 100ms ease-in;
-
+.cf-container-btn-option:hover > span {
+  color: #333;
+  cursor: pointer;
+  transition: color 100ms ease-in;
 }
-
-
 
 .cf-button-icon {
   background-color: transparent;
@@ -136,30 +134,29 @@ a {
   border-color: #3f58b1;
 }
 
-.cf-button-icon.exit{
+.cf-button-icon.exit {
   margin-right: 10px;
 }
 
-.cf-button-icon.exit > span{
+.cf-button-icon.exit > span {
   color: #e86969;
 }
 
-.cf-button-icon.save > span{
+.cf-button-icon.save > span {
   color: #17b565;
 }
 
-
-.cf-info-field{
+.cf-info-field {
   display: block;
   text-align: left;
   padding-bottom: 10px;
 }
-.cf-info-field-title{
+.cf-info-field-title {
   text-transform: uppercase;
   font-size: 1rem;
   color: #3f58b1;
 }
 
-.cf-info-field-text{
+.cf-info-field-text {
   font-weight: 300;
 }
