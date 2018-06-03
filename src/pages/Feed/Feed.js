@@ -292,11 +292,12 @@ const PublicationBox = ({ item, ...props }) => {
         <div className="publication-header">
           <div
             className="publication-header-image"
-            style={{
-              backgroundImage:
-                "url(" + item.company_logo &&
-                configs.baseURL + "file/" + item.company_logo + ")"
-            }}
+            style={
+              item.company_logo && {
+                backgroundImage:
+                  "url(" + configs.baseURL + "file/" + item.company_logo + ")"
+              }
+            }
           />
           <div className="publication-header-info">
             <div className="publication-header-title"> {item.title} </div>

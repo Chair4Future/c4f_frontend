@@ -98,7 +98,7 @@ export default class PopupContainer extends Component {
                     }
                     isVisible={true}
                     name={org.name}
-                    img={org.logo && configs.baseURL + "file/" + org.logo}
+                    img={org.logo && org.logo}
                     click={this.organizationSelected}
                   />
                 );
@@ -169,7 +169,9 @@ const PopupContainerUser = ({
         <div className="popup-user-content">
           <div
             className="popup-user-img"
-            style={{ backgroundImage: "url(" + img + ")" }}
+            style={{
+              backgroundImage: "url(" + configs.baseURL + "file/" + img + ")"
+            }}
           />
           <div className="popup-user-name">{name}</div>
         </div>

@@ -10,31 +10,13 @@ class User {
     this.email = user.email || null;
     this.name = user.name;
     this.image =
-      (user.image && configs.baseURL + "file/" + user.image) ||
+      user.image ||
       "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
     this.organizations = user.organizations;
-    // [
-    //     {id: "8b359dc5-d078-4969-8de7-32fe27b488c0", name: 'Softinsa', img: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg'},
-    //     {id: "eeqw", name: 'Critical', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CSW_Gradiente_rgb.png/220px-CSW_Gradiente_rgb.png'}
-    // ];
   }
 }
 
 class ObservableUser {
-  //para testes, deve ser null
-  // @observable user = {
-  //     token: null,
-  //     user_id: 1,
-  //     email: "luisnunes111@hotmail.com",
-  //     firstName: "Luis",
-  //     lastName: "Nunes",
-  //     nameComplete: "Luis Nunes",
-  //     image: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg',
-  //     organizations: [
-  //         {id: 1, name: 'Softinsa', img: 'http://www.softinsa.pt/media/2017/12/85ad3272-460d-489f-bbbb-83a88a62892f-1513956143838.jpg'},
-  //         {id: 2, name: 'Critical', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CSW_Gradiente_rgb.png/220px-CSW_Gradiente_rgb.png'}
-  //     ]
-  // }
   @observable user = loadUser();
   @observable organization = null;
 

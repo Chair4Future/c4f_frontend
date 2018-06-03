@@ -15,7 +15,7 @@ export default class Navbar extends React.Component {
     super(props);
     this.state = {
       redirect: false,
-      email: "user@c4f.pt",
+      email: "admin@c4f.pt",
       password: "123qweASD"
     };
     this.email = React.createRef();
@@ -36,10 +36,6 @@ export default class Navbar extends React.Component {
       history.push("/profile");
     }
     // display error
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(nextProps);
   }
 
   handleInputChange(event) {
